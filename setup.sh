@@ -7,10 +7,10 @@
 #
 # MAINTENANCE NOTES:
 # 1. RUN COMMAND:
-#    curl -sSL https://raw.githubusercontent.com/jeremybphillips/home-pi-setup/refs/heads/main/setup.sh?token=GHSAT0AAAAAADRLNRKT5LSN67OYLIVQQNUS2KQTJ6A | sudo bash
+#    curl -sSL https://raw.githubusercontent.com/jeremybphillips/home-pi-setup/main/setup.sh | sudo bash
 #
 # 2. TEST BEFORE RUNNING (Dry Run):
-#    curl -sSL https://raw.githubusercontent.com/jeremybphillips/home-pi-setup/refs/heads/main/setup.sh?token=GHSAT0AAAAAADRLNRKT5LSN67OYLIVQQNUS2KQTJ6A
+#    curl -sSL https://raw.githubusercontent.com/jeremybphillips/home-pi-setup/main/setup.sh
 #
 # 3. FIX WINDOWS LINE ENDINGS (If you see ^M or errors):
 #    sed -i 's/\r$//' setup.sh
