@@ -117,6 +117,21 @@ docker run -d \
   linuxserver/heimdall:latest
 
 # ================================================================
+# 7. MATTER SERVER
+# ================================================================
+echo "Installing Matter Server..."
+mkdir -p /home/worm/matter-server
+docker run -d \
+  --name matter-server \
+  --restart unless-stopped \
+  --net host \
+  --security-opt apparmor=unconfined \
+  -v /home/worm/matter-server:/data \
+  -v /run/dbus:/run/dbus:ro \
+  -e TZ=America/Denver \
+  ghcr.io/home-assistant-libs/python-matter-server:stable
+
+# ================================================================
 # FINAL SUMMARY
 # ================================================================
 HOST_NAME=$(hostname)
@@ -138,6 +153,7 @@ echo " 🟢 Heimdall (Dashboard):   http://${PRIMARY_URL}:80"
 echo " 🟢 Home Assistant:         http://${PRIMARY_URL}:8123"
 echo " 🟢 Homebridge:             http://${PRIMARY_URL}:8581"
 echo " 🟢 MeTube (Downloads):     http://${PRIMARY_URL}:8085"
+echo " 🟢 Matter Server:          http://${PRIMARY_URL}:5580"
 echo "----------------------------------------------------------------"
 echo " 📂 Storage: Your videos are at /home/worm/downloads"
 echo "================================================================"
